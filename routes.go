@@ -4,6 +4,7 @@ import "github.com/gin-gonic/gin"
 
 func (app *application) Routes() *gin.Engine {
 	router := gin.Default()
+	router.Use(corsMiddleware())
 
 	v1 := router.Group("/v1")
 
